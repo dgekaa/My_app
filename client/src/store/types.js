@@ -1,0 +1,1 @@
+export const IS_REGISTER_OR_LOGIN = "IS_REGISTER_OR_LOGIN";

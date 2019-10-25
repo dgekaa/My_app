@@ -1,0 +1,21 @@
+
+.registrationWrap{
+    margin: 0 auto;
+    width: 400px;
+    min-width: 250px;
+    .btnsWrap{
+        width: calc(100% + 10px);
+        .submitBtn{
+            cursor: pointer;
+            width: calc(100% - 150px);
+            height: 35px;
+            padding: 0 5px;
+        }
+        button{
+            @extend .submitBtn;
+            width: 150px;
+            margin-right: 0px;
+        }
+    }
+   
+}
