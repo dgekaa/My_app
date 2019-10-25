@@ -1,5 +1,13 @@
-
-.registrationWrap{
+@keyframes show{
+    0%{
+        opacity: 0;    
+    }
+    100%{
+        opacity: 1;  
+    }
+}
+.formWrap{
+    animation: show 0.5s;
     margin: 0 auto;
     width: 400px;
     min-width: 250px;

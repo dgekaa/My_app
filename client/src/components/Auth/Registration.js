@@ -5,14 +5,14 @@ import { useDispatch } from "react-redux";
 import "./Auth.scss";
 import { setIsRegisterOrLogin } from "../../store/actions/auth";
 import { InputDefault } from "../_Forms/Input";
-import { requiredField, matchInput } from "../_Validation";
+import { requiredField, passwordEquals } from "../_Validation";
 
 const Registration = props => {
     const { handleSubmit } = props;
     const dispatch = useDispatch();
     
     return(
-        <div className="registrationWrap">
+        <div className="formWrap">
             <form onSubmit={handleSubmit}>
                 <Field 
                     name="name"
@@ -33,7 +33,7 @@ const Registration = props => {
                     component={ InputDefault }
                     type="password"
                     placeholder="Повтор пароля"
-                    validate={[ requiredField, matchInput ]}
+                    validate={[ requiredField, passwordEquals ]}
                 />
                 <div className="btnsWrap">
                     <button 

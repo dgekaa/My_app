@@ -12,7 +12,7 @@ const Login = props => {
     const dispatch = useDispatch();
 
     return(
-        <div className="registrationWrap">
+        <div className="formWrap">
             <form onSubmit={handleSubmit}>
                 <Field 
                     name="name"

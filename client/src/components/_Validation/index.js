@@ -5,7 +5,7 @@ export const requiredField = input => {
     return null;
 };
 
-export const matchInput = (input, allInputs) =>
+export const passwordEquals = (input, allInputs) =>
     input === allInputs.password 
         ? undefined 
         : 'Пароли не совпадают';

@@ -1,3 +1,14 @@
+@keyframes shomHide {
+    0% {
+        margin-left: 25px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }     
+}
+
 .inputDefaultWrap{   
     height: 35px;    
     margin: 5px 0;
@@ -9,6 +20,7 @@
         padding: 0 5px;
     };
     .errorField{
+        animation:  shomHide 0.5s;
         display: inline-block;
         height: 35px;
         line-height: 35px;
@@ -32,4 +44,5 @@
             border-color: transparent transparent transparent red;
         }   
     }
+    
 };

@@ -12,9 +12,9 @@ export const InputDefault = ({ input, meta, ...props }) => {
             {
                 meta.error && 
                 meta.touched &&
-                <span className="errorField">
-                    {meta.error}
-                </span>
+                    <span className="errorField">
+                        {meta.error}
+                    </span>
             }            
         </div>       
         
