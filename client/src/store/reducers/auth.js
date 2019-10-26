@@ -1,8 +1,10 @@
-import { IS_REGISTER_OR_LOGIN } from "../types";
+import { IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN } from "../types";
 
 const initialState = {
     isRegistration: false,
-    isLogin: true
+    isLogin: true,
+    user: "",
+    login: false
 };
 
 const auth = (state = initialState, action) => {
@@ -14,6 +16,18 @@ const auth = (state = initialState, action) => {
                 isRegistration,
                 isLogin
             }
+        case REGISTRATION:
+            console.log(action.payload, "DATA REGISTRATION")
+            return {
+                ...state,
+                user: action.payload
+            }    
+        case LOGIN:
+            console.log(action.payload, "DATA LOGIN")
+            return {
+                ...state,
+                login: action.payload
+            }        
         default:
             return {...state}
     }

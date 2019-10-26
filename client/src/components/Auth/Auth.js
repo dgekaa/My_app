@@ -1,14 +1,22 @@
 import React from "react";
 import RegistrationForm from "./Registration";
 import LoginForm from "./Login";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { registration, login } from "../../store/actions/auth"
 
 const Auth = () => {
+    const dispatch = useDispatch();
+
     const isReg = useSelector(state => state.auth.isRegistration)
     const isLogin = useSelector(state => state.auth.isLogin)
    
     const submitRegistrForm = data => {
-        console.log(data, "submitRegistrForm");
+        dispatch(registration(data))
+    };
+
+    const submitLoginrForm = data => {
+        dispatch(login(data))
     };
 
     return(
@@ -22,7 +30,7 @@ const Auth = () => {
             {
                 isLogin && 
                 <LoginForm 
-                    onSubmit={submitRegistrForm}
+                    onSubmit={submitLoginrForm}
                 />
             }
         </React.Fragment>
