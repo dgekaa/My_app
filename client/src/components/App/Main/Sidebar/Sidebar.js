@@ -1,17 +1,21 @@
 import React from "react";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-// import { logout } from "../../../../store/actions/auth";
-
-// import "./Header.scss";
+import "./Sidebar.scss";
 
 const Sidebar = props => {
     const dispatch = useDispatch();
    
     return(
       <section className="sidebar">
-        Sidebar
+        <span className="sidebarSpan">
+          Sidebar          
+        </span>        
+        <Link to="/toDo">
+          ToDo
+        </Link>
       </section>
         
     )

@@ -49,12 +49,10 @@ passport.use(new LocalStrategy(
     }
 ));
 
-
-
 // ROUTES
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
-
+app.use("/toDo", require("./routes/toDo"));
 
 // CONNECTS
 const db = require("./config/keys");

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 import Header from "./Header/Header";
 import Sidebar from "./Sidebar/Sidebar";
+import Profile from "./Profile/Profile";
 
 import "./Main.scss";
 
@@ -16,6 +17,7 @@ const Main = props => {
       <section className="mainWrap">
         <Header />
         <Sidebar />
+        <Profile />
       </section>
     )
 }

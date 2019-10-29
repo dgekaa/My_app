@@ -12,7 +12,7 @@ const Header = props => {
    
     return(
       <section className="header">
-        <h4>Добро пожаловать, {user}</h4>
+        <h4 className="heading">Добро пожаловать, {user}</h4>
         <span className="logOut"
           onClick={()=>{dispatch(logout())}}
         >

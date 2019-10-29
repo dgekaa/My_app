@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
 
 const User = require("../Models/Users");
 
-// Register Handle
 router.post("/register", (req, res) => {
   const { name, password, repassword } = req.body;  
   User.findOne({name: name})
@@ -29,7 +27,6 @@ router.post("/register", (req, res) => {
     .catch(err => res.status(400))
 });
 
-// Login Handle
 router.post("/login", (req, res) => {
   const { name, password } = req.body;
   User.findOne({name: name})

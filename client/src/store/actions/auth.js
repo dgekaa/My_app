@@ -50,7 +50,6 @@ export const login = data => dispatch => {
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data, "DATA from login action")
             dispatch(loginSuccess(data))            
         })
         .catch((err)=>{

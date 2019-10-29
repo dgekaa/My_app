@@ -1,4 +1,33 @@
-.sidebar{
-  grid-area: side;
+@keyframes bounceSpan{
+  0%{
+    padding-left: 0;
+  }
+  50%{
+    padding-left: 35px;
+  }
+  100%{
+    padding-left: 0;
+  }
+}
+.sidebar{  
+  padding: 10px;
+  z-index: 2;
   background: skyblue;
+  overflow: hidden;
+  width: 350px;
+  height: 100%;
+  position: fixed;
+  top: 70px;
+  left: -330px;
+  cursor: pointer;
+  transition: 0.4s ease all;
+  &:hover{
+    left: 0;
+    .sidebarSpan{
+      animation: bounceSpan 0.4s ease 0.25s ;
+    }
+  }
+  .sidebarSpan{
+    display: inline-block;    
+  }
 }
