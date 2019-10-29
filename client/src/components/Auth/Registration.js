@@ -6,7 +6,7 @@ import "./Auth.scss";
 import { setIsRegisterOrLogin, deleteErrMessage } from "../../store/actions/auth";
 import { InputDefault } from "../_Forms/Input";
 import { ButtonDefault } from "../_Forms/Button";
-import { requiredField, passwordEquals } from "../_Validation";
+import { requiredField } from "../_Validation";
 
 const Registration = props => {
     const { handleSubmit } = props;
@@ -43,7 +43,7 @@ const Registration = props => {
                     component={ InputDefault }
                     type="password"
                     placeholder="Повтор пароля"
-                    validate={[ requiredField, passwordEquals ]}
+                    validate={[ requiredField ]}
                 />
                 <div className="btnsWrap">
                     <ButtonDefault type="submit">

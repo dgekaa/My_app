@@ -1,4 +1,4 @@
-import {IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN, DELETE_ERR_MESSGE} from "../types";
+import {IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN, DELETE_ERR_MESSGE, LOGOUT} from "../types";
 
 export const setIsRegisterOrLogin = (isRegistration, isLogin) => {
     return {
@@ -26,7 +26,6 @@ export const registration = data => dispatch => {
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data, "!!!!!!!!s!!!!!!!!!!!!")
             dispatch(registrationSuccess(data))            
         })
         .catch((err)=>{
@@ -62,5 +61,11 @@ export const login = data => dispatch => {
 export const deleteErrMessage = () => {
     return {
         type: DELETE_ERR_MESSGE,
+    }    
+}
+
+export const logout = () => {
+    return {
+        type: LOGOUT,
     }    
 }

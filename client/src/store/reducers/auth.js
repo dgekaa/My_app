@@ -1,9 +1,9 @@
-import { IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN, DELETE_ERR_MESSGE } from "../types";
+import { IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN, DELETE_ERR_MESSGE, LOGOUT } from "../types";
 
 const initialState = {
     isRegistration: false,
     isLogin: true,
-    user: "",
+    user: "DEFAULT_USER_NAME",
     errMesage: ""
 };
 
@@ -32,7 +32,12 @@ const auth = (state = initialState, action) => {
             return {
                 ...state,
                 errMesage: ""
-            }     
+            }   
+        case LOGOUT:
+            return {
+                ...state,
+                user: ""
+            }       
         default:
             return {...state}
     }

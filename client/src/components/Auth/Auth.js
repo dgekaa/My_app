@@ -16,12 +16,10 @@ const Auth = () => {
 
     const submitRegistrForm = data => {
         dispatch(registration(data));
-        // dispatch(deleteErrMessage());
     };
 
     const submitLoginrForm = data => {
         dispatch(login(data));
-        // dispatch(deleteErrMessage());
     };
     
     if(user) return <Redirect to="/" />

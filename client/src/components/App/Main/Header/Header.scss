@@ -1,0 +1,27 @@
+.header{
+  grid-area:  head;
+  background-color: #fff;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  position: relative;
+  .logOut{
+    font-size: 10px;
+    display: inline-block;
+    position: absolute;
+    color: rgb(167, 167, 167);
+    top: 0;
+    right: 3px;
+    height: 15px;
+    line-height: 15px;
+    cursor: pointer;
+    &:hover{
+      font-weight: 300;
+      font-size: 11px;
+      right: 1px;
+      top: 1px;
+      color: #3d3d3d;
+      transition: 0.1s ease all;
+    }
+  }
+}
