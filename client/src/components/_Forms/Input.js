@@ -8,7 +8,7 @@ export const InputDefault = ({ input, meta, ...props }) => {
             <input className="inputDefault"
                 {...input} 
                 {...props}
-            />            
+            />    
             {
                 meta.error && 
                 meta.touched &&
@@ -20,3 +20,4 @@ export const InputDefault = ({ input, meta, ...props }) => {
         
     );
 };
+

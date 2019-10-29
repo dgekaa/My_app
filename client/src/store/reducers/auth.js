@@ -1,10 +1,10 @@
-import { IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN } from "../types";
+import { IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN, DELETE_ERR_MESSGE } from "../types";
 
 const initialState = {
     isRegistration: false,
     isLogin: true,
     user: "",
-    login: false
+    errMesage: ""
 };
 
 const auth = (state = initialState, action) => {
@@ -17,17 +17,22 @@ const auth = (state = initialState, action) => {
                 isLogin
             }
         case REGISTRATION:
-            console.log(action.payload, "DATA REGISTRATION")
             return {
                 ...state,
-                user: action.payload
+                user: action.payload.name || "",
+                errMesage: action.payload.msg || ""
             }    
         case LOGIN:
-            console.log(action.payload, "DATA LOGIN")
             return {
                 ...state,
-                login: action.payload
+                user: action.payload.name,
+                errMesage: action.payload.msg || ""
             }        
+        case DELETE_ERR_MESSGE:
+            return {
+                ...state,
+                errMesage: ""
+            }     
         default:
             return {...state}
     }

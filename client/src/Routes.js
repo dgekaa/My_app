@@ -1,5 +1,6 @@
 import App from "./components/App/App";
 import Auth from "./components/Auth/Auth";
+import Main from "./components/App/Main/Main";
 // import ToDo from "./pages/ToDo";
 // import Home from "./pages/Home";
 // import About from "./pages/About";
@@ -11,14 +12,15 @@ export default [
         routes: [
             {
                 component: Auth,
-                path: "/",
+                path: "/login",
                 exact: true
             }
-            // ,{
-            //     component: About,
-            //     path: "/about",
-            //     exact: true
-            // },{
+            ,{
+                component: Main,
+                path: "/",
+                exact: true
+            },
+            //{
             //     component: ToDo,
             //     path: "/toDo",
             //     exact: true

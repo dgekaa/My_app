@@ -1,4 +1,4 @@
-import {IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN} from "../types";
+import {IS_REGISTER_OR_LOGIN, REGISTRATION, LOGIN, DELETE_ERR_MESSGE} from "../types";
 
 export const setIsRegisterOrLogin = (isRegistration, isLogin) => {
     return {
@@ -15,7 +15,7 @@ export const registrationSuccess = data => {
         payload: data
     }    
 }
-export const registration = data => dispatch => {
+export const registration = data => dispatch => {    
     fetch("http://localhost:8080/users/register",{
         method: "POST",
         headers: {
@@ -26,7 +26,7 @@ export const registration = data => dispatch => {
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data, "DATA from registartion action")
+            console.log(data, "!!!!!!!!s!!!!!!!!!!!!")
             dispatch(registrationSuccess(data))            
         })
         .catch((err)=>{
@@ -36,7 +36,7 @@ export const registration = data => dispatch => {
 
 export const loginSuccess = data => {
     return {
-        type: REGISTRATION,
+        type: LOGIN,
         payload: data
     }    
 }
@@ -57,4 +57,10 @@ export const login = data => dispatch => {
         .catch((err)=>{
             console.log("ERR ", err)
         })
+}
+
+export const deleteErrMessage = () => {
+    return {
+        type: DELETE_ERR_MESSGE,
+    }    
 }

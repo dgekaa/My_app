@@ -3,8 +3,9 @@ import {Field, reduxForm} from 'redux-form';
 import { useDispatch } from "react-redux";
 
 import "./Auth.scss";
-import { setIsRegisterOrLogin } from "../../store/actions/auth";
+import { setIsRegisterOrLogin, deleteErrMessage } from "../../store/actions/auth";
 import { InputDefault } from "../_Forms/Input";
+import { ButtonDefault } from "../_Forms/Button";
 import { requiredField } from "../_Validation";
 
 const Login = props => {
@@ -13,6 +14,15 @@ const Login = props => {
 
     return(
         <div className="formWrap">
+            <ButtonDefault 
+                onClick={()=>{
+                    dispatch(setIsRegisterOrLogin(true, false));
+                    dispatch(deleteErrMessage());
+                }}
+                type="button"
+            >
+                Еще нет аккаунта
+            </ButtonDefault>
             <form onSubmit={handleSubmit}>
                 <Field 
                     name="name"
@@ -29,20 +39,9 @@ const Login = props => {
                     validate={[ requiredField ]}
                 />
                 <div className="btnsWrap">
-                    <button 
-                        type="button"
-                        onClick={()=>{
-                            dispatch(setIsRegisterOrLogin(true, false))
-                        }}
-                    >
-                        Еще нет аккаунта
-                    </button>
-                    <button 
-                        className="submitBtn"
-                        type="submit"
-                    >
+                    <ButtonDefault type="submit">
                         Войти
-                    </button>
+                    </ButtonDefault>
                 </div>
             </form>
         </div>

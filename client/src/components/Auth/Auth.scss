@@ -10,20 +10,26 @@
     animation: show 0.5s;
     margin: 0 auto;
     width: 400px;
-    min-width: 250px;
-    .btnsWrap{
-        width: calc(100% + 10px);
-        .submitBtn{
-            cursor: pointer;
-            width: calc(100% - 150px);
-            height: 35px;
-            padding: 0 5px;
-        }
-        button{
-            @extend .submitBtn;
-            width: 150px;
-            margin-right: 0px;
-        }
+    min-width: 250px;       
+}
+@keyframes showErr{
+    0%{
+        opacity: 0;
     }
-   
+    100%{
+        opacity: 1;
+    }
+}
+
+.errMesage{
+    background: rgb(252, 193, 205);
+    font-style: oblique;
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+    padding: 3px;
+    margin: 0 calc(50% - 200px) 5px;
+    width: 400px;
+    animation: showErr 0.5s;
+    color: rgb(80, 80, 80);
 }
